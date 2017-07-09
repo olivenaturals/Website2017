@@ -6,8 +6,7 @@
       <title>Olive Natural Farm</title>
       <link rel="stylesheet" href="css/components.css">
       <link rel="stylesheet" href="css/responsee.css">
-      <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
-      <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+     
       <!-- CUSTOM STYLE -->  
       <link rel="stylesheet" href="css/template-style.css">
       <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -79,8 +78,35 @@
             </div>
          </nav>
       </header>
+       <br>
+       <br>
       <section id="main-content">
-         
+            <div id="content" class="left-align ">
+                <div class="line">
+                    <div class="s-12 l-6">
+                        <form class="form-horizontal">
+                              <div class="form-group">
+                                <label for="camera1" class="s-6 control-label">Camera</label>
+                                <div class="s-3">
+                                  <input type="checkbox" class="form-control" id="camera1">
+                                </div>
+                                  <div class="s-3">
+                                      <img id="bulb1" src="img/circle1.png" style="width:30px;"/>
+                                  </div>
+                              </div>
+                            <div class="form-group">
+                                <label for="light1" class="s-6 control-label">Light</label>
+                                <div class="s-3">
+                                  <input type="checkbox" class="form-control" id="light1" >
+                                </div>
+                                  <div class="s-3">
+                                      <img id="st-light1" src="img/circle-on.svg" style="width:30px; "/>
+                                  </div>
+                              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
       </section>
       <!-- FOOTER -->   
       <footer>
@@ -96,24 +122,9 @@
             </div>
          </div>
       </footer>
-      <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>   
+     
       <script type="text/javascript">
-         jQuery(document).ready(function($) {  
-           $("#owl-demo").owlCarousel({
-         	slideSpeed : 300,
-         	autoPlay : true,
-         	navigation : false,
-         	pagination : false,
-         	singleItem:true
-           });
-           $("#owl-demo2").owlCarousel({
-         	slideSpeed : 300,
-         	autoPlay : true,
-         	navigation : false,
-         	pagination : true,
-         	singleItem:true
-           });
-         });	
+        
           
           $(function() {
               $('.menuitem').click(function(e){
@@ -124,8 +135,14 @@
                   });
                   
               });
-              
-             $('.defaultmenu').click();  
+              $('#camera1').click(function(e) {
+                  var status = (this.checked) ? "circle-on.svg" : "circle1.png";
+                  //('#bulb1').css('background-color',status);
+                  //console.log(status);
+                  $('#bulb1').attr('src', 'img/' + status);
+                  
+              })
+            // $('.defaultmenu').click();  
               
           });
           
